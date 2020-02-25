@@ -2,13 +2,16 @@ name=input("Введите название фильма:\n")
 date=input("Выберите дату фильма(сегодня,завтра):\n")
 time=int(input("Выберите время фильма:\n"))
 quantity=int(input("Количество билетов:\n"))
+ans=0
 if name=="Паразиты":
     if time==12:
         ans=250
     elif time==16:
         ans=350
-    else:
+    elif time==20:
         ans=450
+    else:
+        ans=0
 if name=="1917":
     if time==10:
         ans=250
@@ -26,7 +29,10 @@ elif date=="сегодня":
     sale=0.05
 elif quantity>=20:
     sale=0.2
-print("Суммарная стоимость билетов", ans*(1-sale), "руб.")
+if ans=0:
+    print("Ошибка ввода")
+else
+    print("Суммарная стоимость билетов", ans*(1-sale), "руб.")
 input("\n\nНажмите Enter. чтобы выйти")
 
 

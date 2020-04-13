@@ -1,19 +1,18 @@
+import tkinter
+import json
+
 def do_append():
-    with open('todo.json','r') as file:
-        reader = file.read()
-        reader.append({"category":entry2.get(), "name":entry1.get(), "time":entry3.get()})
-    with open('todo.json','w') as file:
-        file.write(reader)
+    to_json = {"category":entry2.get(), "name":entry1.get(), "time":entry3.get()}
+    with open('todo.json','a') as file:
+            json.dump(to_json, file)
 
 def show_tasks():
     with open('todo.json','r') as file:
-        reader = file.read()
-    res.set('\n'.join([f'Задача: {i["task"]} \nКатегория: {i["category"]} \nВремя: {i["time"]}' for i in reader]))
+        reader = json.load(file)
+    res.set('\n'.join([f'Задача: {i["task"]} Категория: {i["category"]} Время: {i["time"]}' for i in reader]))
     label4 = tkinter.Label(frame, textvariable = res)
     label4.pack()
     # окно со списком задач появляется после добавления первой задачи
-
-import tkinter
 
 window = tkinter.Tk()
 window.title('Менеджер задач')
@@ -41,7 +40,7 @@ button1 = tkinter.Button(window, text = 'Заказать', command = do_append)
 button1.grid(row = 4, column = 1)
 button2 = tkinter.Button(window, text = 'Список задач', command = show_tasks)
 button2.grid(row = 5, column = 1)
-button3 = tkinter.Button(window, text = 'Выход')
+button3 = tkinter.Button(window, text = 'Выход', command = exit)
 button3.grid(row = 6, column = 1)
 
 

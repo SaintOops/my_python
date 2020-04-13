@@ -20,7 +20,7 @@ reslabel.pack()
 
 button = tkinter.Button(window, text = 'Конвертировать', command = test)
 button.pack()
-buttonex = tkinter.Button(window, text = 'Выход')
+buttonex = tkinter.Button(window, text = 'Выход', command = exit)
 buttonex.pack()
 
 

@@ -31,6 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'dynamicdata',
     'contacts',
     'species',
     'django.contrib.admin',

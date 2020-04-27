@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compattible" content="ie=edge">
+  <title>Спасем животных вместе</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  <link rel="SHORTCUT ICON" href="https://v-kosmose.com/wp-content/uploads/2013/11/638831main_globe_east_2048.jpg" type="image/png">
+</head>
+<body>
+
+  <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+        <a class="navbar-brand" href="/">Главная</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="/dynamicdata">Новости <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/contacts">О нас</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+      <section class="jumbotron text-center">
+
+        <form method="POST">
+          {% csrf_token %}
+          <div class="row">
+            <div class="col-md-6">
+              Имя
+              <p>{{form.name}}</p>
+              Фамилия
+              <p>{{form.surname}}</p>
+              Номер карты
+              <p>{{form.cardnum}}</p>
+            </div>
+
+            <div class="col-md-6">
+              CVC код
+              <p>{{form.cvc}}</p>
+              Срок действия карты
+              <p>{{form.cardvalid}}</p>
+              Сумма пожертвования
+              <p>{{form.money}}</p>
+            </div>
+          </div>
+          <input type="submit" name="Помочь">
+        </form>
+
+        <p><h3>Недавние пожертвования в фонд</h3></p>
+        {% for task in paydata %}
+          <div class="container">
+            <p>{{task}}</p>
+          </div>
+        {% endfor %}
+      </section>
+    <div class="container-fluid">
+        <hr> &copy; Mайко&&Малышев corporation
+    </div>
+    </body>
+    </html>

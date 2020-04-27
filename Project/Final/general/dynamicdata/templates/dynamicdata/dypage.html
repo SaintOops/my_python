@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Спасем животных вместе</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link rel="SHORTCUT ICON" href="https://v-kosmose.com/wp-content/uploads/2013/11/638831main_globe_east_2048.jpg" type="image/png">
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+          <a class="navbar-brand" href="/" >Главная</a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav mr-auto">
+              <li class="nav-item active">
+                <a class="nav-link" href="/dynamicdata">Новости <span class="sr-only">(current)</span></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/contacts">О нас</a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+        <section class="jumbotron text-center">
+              <div class="container">
+                <h1 class="jumbotron-heading">Новости</h1>
+              </div>
+            </section>
+
+    <div class="container marketing">
+
+    {% for info in articles %}
+
+    <hr class="featurette-divider">
+
+    <div class="row featurette">
+      <div class="col-md-7">
+        <h2 class="featurette-heading">{{info.title}}</h2>
+        <p class="lead">{{info.description}}</p>
+        <p></p>
+        <p>Дата: {{info.publishedAt}}</p>
+        <form action={{info.url}} target="_blank">
+          <button class="btn btn-outline-success my-2 my-sm-0" type="submit"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Источник...</font></font></button>
+        </form>
+      </div>
+      <div class="col-md-5">
+        <img src={{info.urlToImage}} width="500" height="500" border="2">      </div>
+    </div>
+
+    {% endfor %}
+    <div class="container-fluid">
+        <hr> &copy; Mайко&&Малышев corporation
+    </div>
+  </div>
+
+  </body>
+</html>

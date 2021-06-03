@@ -118,12 +118,12 @@ static PyObject *subfac(PyObject *self, PyObject *args) {
 
 
 static PyMethodDef someSimpleFunc_funcs[] = {
-    {"fibonacci", fib, METH_VARARGS, "fukin' doc"},
-	{"catalan", cat, METH_VARARGS, "fukin' doc"},
-	{"factorial", fac, METH_VARARGS, "fukin' doc"},
-	{"twice_n", n_len, METH_VARARGS, "fukin' doc"},
-	{"binomial", bin, METH_VARARGS, "fukin' doc"},
-	{"binom", binomi, METH_VARARGS, "fukin' doc"},
+    {"fibonacci", fib, METH_VARARGS, "doc"},
+	{"catalan", cat, METH_VARARGS, "doc"},
+	{"factorial", fac, METH_VARARGS, "doc"},
+	{"twice_n", n_len, METH_VARARGS, "doc"},
+	{"binomial", bin, METH_VARARGS, "doc"},
+	{"binom", binomi, METH_VARARGS, "doc"},
 	{"subfactorial", subfac, METH_VARARGS, "fukin' doc"},
 	{"double_factorial", duobfac, METH_VARARGS, "fukin' doc"},
 	//§{"matrix_multiplication", mm, METH_VARARGS, "fukin' doc"},
